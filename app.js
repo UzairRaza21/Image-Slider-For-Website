@@ -1,0 +1,26 @@
+
+let flag = 0;
+function controller(a){
+    flag = flag + a;
+    slideShow(flag)
+};
+
+
+slideShow(flag);
+function slideShow(num){
+    let slides = document.getElementsByClassName('slide');
+    // console.log(slides);
+    if ( num == slides.length){
+        flag = 0;
+        num = 0;
+    }
+    if(num < 0){
+        flag = slides.length-1;
+        num = slides.length-1;
+    }
+    // this FOR LOOP is used to describe that all the slides display none
+    for (let y of slides){
+        y.style.display = "none";
+    };
+    slides[num].style.display = "block";
+}
